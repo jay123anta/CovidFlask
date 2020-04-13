@@ -1,0 +1,66 @@
+@tailwind base;
+@tailwind components;
+
+.spinner {
+  position: relative;
+  color: transparent !important;
+  pointer-events: none;
+}
+
+.spinner::after {
+  content: "";
+  position: absolute !important;
+  top: calc(50% - (1em / 2));
+  left: calc(50% - (1em / 2));
+  display: block;
+  width: 1em;
+  height: 1em;
+  border: 2px solid currentColor;
+  border-radius: 9999px;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  animation: spinAround 500ms infinite linear;
+}
+
+.charts-header {
+          height: 100%;
+          display: block;
+          flex-direction: column;
+          align-items: center;
+          justify-content: flex-start;
+          .chart-title {
+
+            font-size: 2rem !important;
+            color: text-black;
+	    font-weight: bold;
+            text-transform: uppercase;
+            padding: 20px 0 20px 0;
+          }
+
+          .chart-content {
+            height: 100%;
+            width: 100%;
+          }
+
+          .chart-note {
+           height: 50px;
+           margin-top: 5px;
+          }
+    }    
+
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.legend text {
+  fill: #edf2f7;
+}
+
+@import url("https://fonts.googleapis.com/css?family=Inter:100,200,300,400,500,600,700,800,900&display=swap");
+
+@tailwind utilities;
